@@ -6,21 +6,65 @@
 <title>Who We Are</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
+<style>
+.who { position: relative; z-index: 1; padding: 40px 0 96px; }
+.who-studio { margin-bottom: 40px; }
+.who-studio h1 { font-size: clamp(28px, 4vw, 42px); margin: 0 0 10px; }
+.who-studio p { color: #c5d4d0; line-height: 1.7; font-size: 17px; max-width: 70ch; }
+.people { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.person { border: 1px solid var(--line); padding: 28px 26px 36px; background: rgba(7,20,31,.35); }
+.person .photo { width: 100%; aspect-ratio: 4/5; object-fit: cover; border: 1px solid var(--line); margin-bottom: 22px; display: block; background: #07141f; }
+.person .role { font-family: "Barlow Condensed", sans-serif; font-weight: 800; font-size: clamp(22px, 2.4vw, 30px); letter-spacing: .08em; text-transform: uppercase; color: var(--foam); margin: 0 0 8px; }
+.person h2 { font-size: 18px; font-weight: 500; margin: 0 0 18px; }
+.person p { color: #c5d4d0; line-height: 1.7; font-size: 16px; margin-bottom: 14px; }
+@media (max-width: 800px) { .people { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 <div class="foam-strand a"></div>
 <div class="foam-strand b"></div>
 <header>
   <div class="wrap bar">
-    <a class="brand" href="index.html"><img class="mark" src="logo-navy-white.jpg" alt="Shattered Coast logo" /><div class="word"><strong>SHATTERED COAST</strong><em><span></span> INTERACTIVE <span></span></em></div></a>
+    <a class="brand" href="index.html">
+      <img class="mark" src="logo-navy-white.jpg" alt="Shattered Coast logo" />
+      <div class="word"><strong>SHATTERED COAST</strong><em><span></span> INTERACTIVE <span></span></em></div>
+    </a>
     <nav>
       <div class="drop"><a href="game-shattered-coast.html">Games</a><div class="menu"><a href="game-shattered-coast.html">Shattered Coast</a></div></div>
-      <div class="drop"><a href="barber-helm.html">Apps</a><div class="menu"><a href="barber-helm.html">Barber Helm</a></div></div>
+      <div class="drop"><a href="helm.html">Apps</a><div class="menu"><a href="helm.html">Home</a></div></div>
       <a href="who-we-are.html">Who We Are</a>
     </nav>
     <a class="steam" href="contact.html">Get in touch</a>
   </div>
 </header>
-<main class="wrap page"><p class="kicker"><b>Who we are</b></p><h1>Keenan and Darren’s journey</h1>
-<p>Stand-in copy until the real story lands.</p></main>
-</body></html>
+<main class="wrap who">
+  <div class="who-studio">
+    <p class="kicker"><b>The studio</b></p>
+    <h1>Shattered Coast Interactive</h1>
+    <p>Shattered Coast Interactive is a company on Vancouver Island. We build Helm, a platform for service businesses, and Shattered Coast, an interactive surf game. Both come from work we have actually done on this coast.</p>
+  </div>
+  <div class="people">
+    <article class="person">
+      <img class="photo" src="darren.jpg" alt="Darren Lundquist" />
+      <p class="role">Founder and CEO</p>
+      <h2>Darren Lundquist</h2>
+      <p>For more than 22 years, surfing has been the constant in Darren Lundquist’s life. Through every high and low, the ocean is where he returns and where his creativity comes alive. He spent many years as a competitive surfer, a run highlighted by winning the 2015 Canadian National Amateur Championship. After more than a decade living in Tofino, B.C., surfing isn’t just something Darren does. It’s the lens through which he sees the world.</p>
+      <p>That creative drive has taken many forms. Darren spent years teaching surf lessons and working in restaurants before finding his craft in barbering. It became both an art form and a way to connect with people from every walk of life. He went on to open Rising Tide Barbershop in Parksville, B.C.</p>
+      <p>Behind the chair, Darren saw a gap. The booking apps barbers rely on treat clients as appointments, not relationships. So he set out to build something better: Barber Helm, a relationship-first platform for barbers, now nearing release.</p>
+      <p>Darren founded Shattered Coast Interactive as the home for both Barber Helm and his debut video game, Shattered Coast. The game quickly became his main pursuit. Shattered Coast brings the real West Coast surf experience into an open world, built by someone who has spent his life, and his competitive career, in those waves.</p>
+      <p>As the company grew, Darren brought on his best friend, Keenan Bush of Tofino Surf Photography, as artistic advisor and investor relations liaison. Years of friendship, world travel, and a shared love of surfing and art have always kept them close. Now they’re channeling that bond into something new: bringing the soul of the coast into the digital world.</p>
+    </article>
+    <article class="person">
+      <img class="photo" src="keenan.jpg" alt="Keenan Bush" />
+      <p class="role">Artistic Advisor and Investor Relations Liaison</p>
+      <h2>Keenan Bush</h2>
+      <p>Keenan Bush is the owner of Tofino Surf Photography, a successful creative company spanning photography, digital art, and physical art. It’s less a single business than a home for whatever Keenan chooses to create. A competitive surfer himself, he brings the same eye and instinct to the water that he brings to his work.</p>
+      <p>Keenan and Darren met in 2014, surfing at North Chesterman Beach in Tofino. Darren still remembers Keenan commenting on his backside pigdog stance, back when, by Darren’s own admission, his surfing wasn’t quite dialed in. Both have come a long way since, as surfers and as creatives. Over the years, they’ve used their shared passion to push each other, riff off each other’s ideas, and hold each other accountable when it counts.</p>
+      <p>After founding Shattered Coast Interactive, Darren brought Keenan on as artistic advisor and investor relations liaison.</p>
+      <p>“Keenan is one of the strongest friendships of my life,” says Darren. “I brought him onto Shattered Coast because I trust his judgment completely, and I know the person he is. We’ve shared a lot of waves and a lot of roads together. Who knows where this one takes us.”</p>
+    </article>
+  </div>
+</main>
+<footer class="wrap"><span>© 2026 Shattered Coast Interactive</span><span>Vancouver Island, British Columbia</span></footer>
+</body>
+</html>
