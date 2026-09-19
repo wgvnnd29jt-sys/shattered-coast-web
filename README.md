@@ -1,5 +1,7 @@
 # Shattered Coast Interactive
 
-Company site mockup. Deploy this folder to Vercel or GitHub Pages.
+Static site for Vercel.
 
-Add `logo-navy-white.jpg` at the repo root.
+Import this repo in Vercel. Framework Preset: Other. Root directory: ./ 
+
+Domain: shatteredcoastinteractive.com
