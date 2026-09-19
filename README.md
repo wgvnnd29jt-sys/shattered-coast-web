@@ -1,2 +1,5 @@
-# shattered-coast-web
-Shattered Coast Interactive company site mockup
+# Shattered Coast Interactive
+
+Company site mockup. Deploy this folder to Vercel or GitHub Pages.
+
+Add `logo-navy-white.jpg` at the repo root.
