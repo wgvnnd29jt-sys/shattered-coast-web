@@ -22,8 +22,8 @@ header { position:sticky; top:0; z-index:10; background:rgba(20,12,6,.88); borde
 nav { margin-left:auto; display:flex; gap:26px; }
 nav a { font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#e8d7b0; }
 .steam { border:1px solid var(--gold); color:var(--gold); padding:10px 16px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
-nav .drop { position:relative; }
-nav .menu { display:none; position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%); min-width:200px; background:#2a1a0e; border:1px solid rgba(212,175,55,.28); padding:8px 0; z-index:20; }
+nav .drop { position:relative; padding-bottom:8px; }
+nav .menu { display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); min-width:200px; background:#2a1a0e; border:1px solid rgba(212,175,55,.28); padding:12px 0 8px; z-index:20; }
 nav .drop:hover .menu, nav .drop:focus-within .menu { display:block; }
 nav .menu a { display:block; padding:10px 16px; font-size:12px; color:var(--gold); }
 .page { position:relative; z-index:1; min-height:calc(100vh - 82px); display:grid; place-items:center; text-align:center; padding:40px 0 80px; }
