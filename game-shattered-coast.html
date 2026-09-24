@@ -31,6 +31,7 @@
       <img class="mark" src="logo-navy.jpg" alt="Shattered Coast logo" />
       <div class="word"><strong>SHATTERED COAST</strong><em><span></span> INTERACTIVE <span></span></em></div>
     </a>
+    <button class="menu-btn" type="button" aria-label="Open menu">Menu</button>
     <nav>
       <div class="drop"><a href="game-shattered-coast.html">Games</a><div class="menu"><a href="game-shattered-coast.html">Shattered Coast</a><a href="flash-in-the-pan.html">Flash in the Pan</a></div></div>
       <div class="drop"><a href="helm.html">Apps</a><div class="menu"><a href="helm.html">Home</a></div></div>
@@ -56,5 +57,14 @@
     <cite>— Darren Lundquist, Founder</cite>
   </blockquote>
 </main>
+<script>
+document.querySelectorAll(".menu-btn").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    var h = btn.closest("header");
+    h.classList.toggle("open");
+    btn.textContent = h.classList.contains("open") ? "Close" : "Menu";
+  });
+});
+</script>
 </body>
 </html>
