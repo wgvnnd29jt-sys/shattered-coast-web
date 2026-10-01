@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Don't Send Help</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+.dsh { position: relative; z-index: 1; padding: 28px 0 80px; }
+.hero-shot { width: min(1100px, 100%); margin: 0 auto 28px; display: block; border: 1px solid rgba(159,227,210,.22); }
+.dsh h1 { font-size: clamp(42px, 7vw, 84px); max-width: 12ch; }
+.badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 22px; }
+.badge-row span { border: 1px solid var(--foam); color: var(--foam); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; padding: 6px 10px; }
+.lead { max-width: 62ch; color: #c5d4d0; font-size: 18px; line-height: 1.7; }
+.lead + .lead { margin-top: 14px; }
+.gallery { position: relative; margin: 42px auto 0; width: min(1100px, 100%); }
+.stage { position: relative; background: #041018; border: 1px solid rgba(159,227,210,.22); overflow: hidden; aspect-ratio: 16 / 9; }
+.stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .45s ease; }
+.stage img.on { opacity: 1; }
+.arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 88px; border: 0; background: rgba(6,19,28,.55); color: var(--foam); font-size: 28px; cursor: pointer; z-index: 2; }
+.arrow:hover { background: rgba(6,19,28,.82); }
+.arrow.prev { left: 0; }
+.arrow.next { right: 0; }
+.cap { display: flex; justify-content: space-between; gap: 16px; margin-top: 12px; color: #8aa3a0; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.policy-link { margin-top: 36px; }
+.policy-link a { color: var(--foam); letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="foam-strand a"></div>
+<div class="foam-strand b"></div>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html">
+      <img class="mark" src="logo-navy.jpg" alt="Shattered Coast logo" />
+      <div class="word"><strong>SHATTERED COAST</strong><em><span></span> INTERACTIVE <span></span></em></div>
+    </a>
+    <button class="menu-btn" type="button" aria-label="Open menu">Menu</button>
+    <nav>
+      <div class="drop"><a href="game-shattered-coast.html">Games</a><div class="menu"><a href="game-shattered-coast.html">Shattered Coast</a><a href="dont-send-help.html">Don't Send Help</a><a href="flash-in-the-pan.html">Flash in the Pan</a></div></div>
+      <div class="drop"><a href="helm.html">Apps</a><div class="menu"><a href="helm.html">Home</a></div></div>
+      <a href="who-we-are.html">Who We Are</a>
+    </nav>
+    <a class="steam" href="contact.html">Get in touch</a>
+  </div>
+</header>
+<main class="wrap dsh">
+  <img class="hero-shot" src="dsh/hero.jpg" alt="A pilot on a washed-up board under a rainbow" />
+  <p class="pin">Shipping now</p>
+  <h1>Don't Send Help</h1>
+  <div class="badge-row"><span>Surf</span><span>Sandbox</span><span>Mellow</span></div>
+  <p class="lead">A supply run goes wrong. A storm puts the plane down off a nearby island. The pilot walks out of the wreck, finds a board on the sand, and stays.</p>
+  <p class="lead">From there it is a chill sandbox. Build a hut. Spear fish. Learn the water. Surf when the ocean says so. No clock. No rescue on the way.</p>
+  <div class="gallery" id="gallery">
+    <div class="stage">
+      <img class="on" src="dsh/03-rainbow.jpg" alt="Standing on a board under a rainbow" />
+      <img src="dsh/01-barrel.jpg" alt="Inside a barrel, looking out at the sun" />
+      <img src="dsh/02-paddle.jpg" alt="Paddling toward a breaking wave" />
+      <img src="dsh/04-ride.jpg" alt="Riding down the face of a wave" />
+      <img src="dsh/05-beach.jpg" alt="Running the beach after a wipeout" />
+      <img src="dsh/06-spear.jpg" alt="Spearfishing over a reef" />
+      <button class="arrow prev" type="button" aria-label="Previous shot">‹</button>
+      <button class="arrow next" type="button" aria-label="Next shot">›</button>
+    </div>
+    <div class="cap"><span id="label">Rainbow</span><span id="count">1 / 6</span></div>
+  </div>
+  <p class="policy-link"><a href="dont-send-help-privacy.html">Privacy policy</a></p>
+</main>
+<footer class="wrap"><span>© 2026 Shattered Coast Interactive</span><span>Don't Send Help</span></footer>
+<script>
+document.querySelectorAll(".menu-btn").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    var h = btn.closest("header");
+    h.classList.toggle("open");
+    btn.textContent = h.classList.contains("open") ? "Close" : "Menu";
+  });
+});
+(function(){
+  var shots = document.querySelectorAll(".stage img");
+  var labels = ["Rainbow", "Barrel", "Paddle out", "On the face", "Beach", "Spearfish"];
+  var i = 0, timer = null;
+  function show(n){
+    i = (n + shots.length) % shots.length;
+    shots.forEach(function(img, idx){ img.classList.toggle("on", idx === i); });
+    document.getElementById("label").textContent = labels[i];
+    document.getElementById("count").textContent = (i + 1) + " / " + shots.length;
+  }
+  function start(){ if (timer) return; timer = setInterval(function(){ show(i + 1); }, 1800); }
+  function stop(){ clearInterval(timer); timer = null; }
+  document.querySelector(".arrow.next").addEventListener("click", function(){ stop(); show(i + 1); });
+  document.querySelector(".arrow.prev").addEventListener("click", function(){ stop(); show(i - 1); });
+  document.querySelectorAll(".arrow").forEach(function(btn){
+    btn.addEventListener("mouseenter", start);
+    btn.addEventListener("mouseleave", stop);
+  });
+})();
+</script>
+</body>
+</html>
